@@ -3,7 +3,7 @@ package collection
 import (
 	"context"
 
-	query "github.com/przebro/couchbazaar/query"
+	query "github.com/przebro/couchstore/query"
 	"github.com/przebro/couchdb/database"
 
 	"github.com/przebro/databazaar/collection"

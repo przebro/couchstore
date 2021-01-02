@@ -1,4 +1,4 @@
-module github.com/przebro/couchbazaar
+module github.com/przebro/couchstore
 
 go 1.14
 

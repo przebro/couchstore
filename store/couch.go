@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	couchdb "github.com/przebro/couchbazaar/collection"
+	couchdb "github.com/przebro/couchstore/collection"
 	"github.com/przebro/couchdb/client"
 	"github.com/przebro/couchdb/connection"
 	"github.com/przebro/couchdb/database"
