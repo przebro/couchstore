@@ -47,7 +47,7 @@ func init() {
 func TestMain(m *testing.M) {
 
 	m.Run()
-	//database.DropDatabase(context.Background(), "databazaar", conn.GetClient())
+	database.DropDatabase(context.Background(), "databazaar", conn.GetClient())
 }
 
 func TestInsertSingle(t *testing.T) {
@@ -179,6 +179,28 @@ func TestGetQuerableCollection(t *testing.T) {
 	}
 
 }
+
+func TestAll(t *testing.T) {
+
+	r, err := col.All(context.Background())
+	if err != nil {
+		t.Error("unexpected result:", err)
+	}
+
+	doc := tst.TestDocument{}
+	numdocs := 0
+
+	for r.Next(context.Background()) {
+		numdocs++
+		r.Decode(&doc)
+	}
+
+	if numdocs == 0 {
+		t.Error("unexpected result")
+	}
+
+}
+
 func TestDelete(t *testing.T) {
 	err := col.Delete(context.Background(), "single_record")
 	if err != nil {

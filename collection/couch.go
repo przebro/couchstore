@@ -2,9 +2,10 @@ package collection
 
 import (
 	"context"
+	"fmt"
 
-	query "github.com/przebro/couchstore/query"
 	"github.com/przebro/couchdb/database"
+	query "github.com/przebro/couchstore/query"
 
 	"github.com/przebro/databazaar/collection"
 
@@ -71,6 +72,21 @@ func (col *couchDBCollection) Select(ctx context.Context, s selector.Expr, fld s
 
 	return &couchCursor{crsr}, nil
 }
+
+func (col *couchDBCollection) All(ctx context.Context) (collection.BazaarCursor, error) {
+
+	qbuilder := query.NewBuilder()
+	dataSelector := qbuilder.Build(selector.Ne("_id", selector.String("")))
+	fmt.Println(dataSelector)
+
+	crsr, err := col.database.Select(ctx, dataSelector, nil, map[database.FindOption]interface{}{database.OptionStat: true})
+	if err != nil {
+		return nil, err
+	}
+
+	return &couchCursor{crsr}, nil
+}
+
 func (col *couchDBCollection) Update(ctx context.Context, doc interface{}) error {
 	_, err := col.database.Update(ctx, doc)
 	return err

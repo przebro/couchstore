@@ -2,3 +2,5 @@ github.com/przebro/couchdb v0.0.0-20210102013036-2a2b9ed05742 h1:H8NsSu46EXy+r7H
 github.com/przebro/couchdb v0.0.0-20210102013036-2a2b9ed05742/go.mod h1:P467SpJeKION0EDVdoLRCdrvxTHeKG4dvfXpcIP6rlw=
 github.com/przebro/databazaar v0.0.0-20210102000057-d1449e7d6cc5 h1:32OJ+++O0DFDkxO0PxXiI6KoDxMmUdpgrkqQvl1X+N4=
 github.com/przebro/databazaar v0.0.0-20210102000057-d1449e7d6cc5/go.mod h1:Q7IUKG8A9EavUvNGyXiWAFC6BECCiuc8A2+qd0KFfP4=
+github.com/przebro/databazaar v0.0.0-20210112011856-4648c2d52594 h1:7+CCS2Izt48cCstFzPTnC8Sj5mEjBUmE/EzVdZQLbQk=
+github.com/przebro/databazaar v0.0.0-20210112011856-4648c2d52594/go.mod h1:Q7IUKG8A9EavUvNGyXiWAFC6BECCiuc8A2+qd0KFfP4=
